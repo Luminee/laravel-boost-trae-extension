@@ -20,19 +20,19 @@ class Trae extends CodeEnvironment implements Agent, McpClient
 
     public function displayName(): string
     {
-        return 'Trae';
+        return 'Trae CN';
     }
 
     public function systemDetectionConfig(Platform $platform): array
     {
         return match ($platform) {
             Platform::Darwin => [
-                'paths' => ['/Applications/Trae.app'],
+                'paths' => ['/Applications/Trae CN.app'],
             ],
             Platform::Windows => [
                 'paths' => [
-                    '%ProgramFiles%\\Trae',
-                    '%LOCALAPPDATA%\\Programs\\Trae',
+                    '%ProgramFiles%\\Trae CN',
+                    '%LOCALAPPDATA%\\Programs\\Trae CN',
                 ],
             ],
             Platform::Linux => [
@@ -67,14 +67,14 @@ class Trae extends CodeEnvironment implements Agent, McpClient
                 return $home
                     . DIRECTORY_SEPARATOR . 'Library'
                     . DIRECTORY_SEPARATOR . 'Application Support'
-                    . DIRECTORY_SEPARATOR . 'Trae'
+                    . DIRECTORY_SEPARATOR . 'Trae CN'
                     . DIRECTORY_SEPARATOR . 'User'
                     . DIRECTORY_SEPARATOR . 'mcp.json';
             case Platform::Windows:
                 $appData = getenv('APPDATA') ?: '';
 
                 return $appData
-                    . DIRECTORY_SEPARATOR . 'Trae'
+                    . DIRECTORY_SEPARATOR . 'Trae CN'
                     . DIRECTORY_SEPARATOR . 'User'
                     . DIRECTORY_SEPARATOR . 'mcp.json';
             case Platform::Linux:
